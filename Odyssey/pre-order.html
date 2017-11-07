@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Super Mario Oddyssey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Links de Bootstrap y CSS -->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet2.css">
+  	<!-- google fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  	<!-- fontawesome -->
+  	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  	<!-- Smooth Scroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+	<img class="header" src="images/header.png">
+
+  <div class="container">
+    <div class="align">
+      <a class="back" href="index.html"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+      </a>
+      <h1 class="pretitle">Pre-order now</h1>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <div class="row container">
+    <div class="col-md-6">
+      <h2 class="logintitle">Have an account? <span>Login.</span></h2>
+      <form class="loginform">
+        <input type="text" name="firstname" placeholder="   e-mail"><br>
+        <input type="text" name="firstname" placeholder="  password"><br>
+        <button class="btn">Login</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+    
+        <h2 class="logintitle">Create a new <span>account.</span>
+          
+          <form id="myform" class="loginform">
+
+          <input name="email" type="text" placeholder="   e-mail">
+        
+          <br>
+
+           <input name="name" type="text" placeholder="   create password">
+
+          <br>
+
+          <input name="id" id="id_number" type="text" placeholder="   credit card">
+
+          <br>
+
+          <input name="phone" type="text" id="phone_number" placeholder="   phone number">
+
+          <br>
+
+          <input name="name2" type="text" placeholder="   full name">
+
+          <br>
+
+          <button class="btn" form="myform" type="submit" class="send">Pre-Order</button>
+
+        </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h3>Designed with love by <a target="_blank" href="instagram.com/arolleunam">Manuel</a></h3>
+  </div>
+
+	<!-- Scripts principales Bootstrap y JS -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Smooth Scroll -->
+	<script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+    <script>
+    $().ready(function() {
+      
+      $("#myform").validate({
+        rules: {
+          name: "required",
+          name2: "required",
+          message: "required",
+          id: "required",
+          phone: "required",
+          activity: {
+            required: true
+          },
+          email: {
+          required: true,
+          email: true
+          },
+        },
+        messages: {
+          name: "<br />Plase introduce a password",
+          name2: "Please introduce your full name",
+          id: "<br />Please introduce your credit card number",
+          phone: "<br />Please introduce your telephone number",
+          message: "Este campo es obligatorio",
+          activity: {
+            required: "Por favor selecciona una actividad"
+          },
+          email: {
+            required: "<br />Please introduce your e-mail",
+            email: "Please introduce a valid e-mail"
+          },
+        }
+      });
+    });
+
+    jQuery(function($){
+       $("#phone_number").mask("(999) 999-9999");
+    });
+    </script>
+
+</body>
+</html>
